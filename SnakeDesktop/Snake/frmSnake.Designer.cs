@@ -29,16 +29,16 @@ namespace Snake
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.licznik = new System.Windows.Forms.Timer(this.components);
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.pbCanvas = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblSocre = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbCanvas)).BeginInit();
             this.SuspendLayout();
             // 
-            // licznik
+            // gameTimer
             // 
-            this.licznik.Tick += new System.EventHandler(this.licznik_Tick);
+            this.gameTimer.Tick += new System.EventHandler(this.licznik_Tick);
             // 
             // pbCanvas
             // 
@@ -88,7 +88,7 @@ namespace Snake
         }
 
         #endregion
-        private System.Windows.Forms.Timer licznik;
+        private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.PictureBox pbCanvas;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblSocre;
