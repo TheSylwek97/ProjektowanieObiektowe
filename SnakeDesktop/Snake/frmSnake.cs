@@ -15,11 +15,26 @@ namespace Snake
 {
     public partial class frmSnake : Form
     {
+        private List<Circle> Snake = new List<Circle>();
+        private Circle food = new Circle();
+    
         public frmSnake()
         {
             InitializeComponent();
+
+            // Ustaw ustawinia na domyœlne
+            new Settings();
+
+            //Usaw szybkoœæ gry i uruchom licznik
+            gameTimer.Interval = 1000 / Settings.Speed;
+            gameTimer.Tick += UpdateScreen;
+            gameTimer.Start();
+
+            //Rozpocznij now¹ grê
+            StartGame(); 
         }
 
+        /*
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             // Click on the link below to continue learning how to build a desktop app using WinForms!
@@ -31,8 +46,8 @@ namespace Snake
         {
             MessageBox.Show("Thanks!");
         }
-
-        private void licznik_Tick(object sender, EventArgs e)
+        */
+        private void gameTimer_Tick(object sender, EventArgs e)
         {
 
         }
