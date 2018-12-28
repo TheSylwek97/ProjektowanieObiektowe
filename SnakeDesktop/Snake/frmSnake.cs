@@ -31,5 +31,10 @@ namespace Snake
         {
             MessageBox.Show("Thanks!");
         }
+
+        private void licznik_Tick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
