@@ -94,7 +94,7 @@ namespace Snake
                 MovePlayer();
             }
 
-            //odœwie¿ canvas
+            //Odœwie¿ canvas
             pbCanvas.Invalidate();
         }
 
@@ -110,8 +110,7 @@ namespace Snake
 
                 //Rysuj Snake'a
                 for (int i = 0; i < Snake.Count; i++)
-                {
-                    //Rysuj g³owê Snake'a
+                {                    
                     if (i == 0)
                         snakeColor = Brushes.Black; //malowanie g³owy Snake'a
                     else
@@ -174,18 +173,10 @@ namespace Snake
             }
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void lblGameOver_Click(object sender, EventArgs e)
         {
-            // Click on the link below to continue learning how to build a desktop app using WinForms!
-            System.Diagnostics.Process.Start("http://aka.ms/dotnet-get-started-desktop");
+            lblGameOver.Visible = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Thanks!");
-
-
-
-        }
     }
 }

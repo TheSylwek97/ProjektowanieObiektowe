@@ -8,7 +8,7 @@ namespace Snake
         //Lista dostępnych klawiszy z klawiatury
         private static Hashtable keyTable = new Hashtable();
 
-        //Wykonaj sprawdzenie by zobaczyć czy szczególny klawisz jest wciśnięty
+        //Wykonaj sprawdzenie by zobaczyć czy klawisz jest wciśnięty
         public static bool KeyPressed(Keys key)
         {
             if(keyTable[key] == null)
