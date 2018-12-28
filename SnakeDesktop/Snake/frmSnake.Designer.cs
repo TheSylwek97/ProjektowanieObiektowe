@@ -29,16 +29,13 @@ namespace Snake
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.pbCanvas = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblSocre = new System.Windows.Forms.Label();
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
+            this.lblGameOver = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbCanvas)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gameTimer
-            // 
-            this.gameTimer.Tick += new System.EventHandler(this.licznik_Tick);
             // 
             // pbCanvas
             // 
@@ -47,6 +44,7 @@ namespace Snake
             this.pbCanvas.Size = new System.Drawing.Size(542, 308);
             this.pbCanvas.TabIndex = 0;
             this.pbCanvas.TabStop = false;
+            this.pbCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.pbCanvas_Paint);
             // 
             // label1
             // 
@@ -67,12 +65,24 @@ namespace Snake
             this.lblSocre.Size = new System.Drawing.Size(0, 37);
             this.lblSocre.TabIndex = 2;
             // 
+            // lblGameOver
+            // 
+            this.lblGameOver.AutoSize = true;
+            this.lblGameOver.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblGameOver.Location = new System.Drawing.Point(38, 68);
+            this.lblGameOver.Name = "lblGameOver";
+            this.lblGameOver.Size = new System.Drawing.Size(152, 55);
+            this.lblGameOver.TabIndex = 3;
+            this.lblGameOver.Text = "label2";
+            this.lblGameOver.Visible = false;
+            // 
             // frmSnake
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(843, 361);
+            this.Controls.Add(this.lblGameOver);
             this.Controls.Add(this.lblSocre);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbCanvas);
@@ -88,10 +98,11 @@ namespace Snake
         }
 
         #endregion
-        private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.PictureBox pbCanvas;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblSocre;
+        private System.Windows.Forms.Timer gameTimer;
+        private System.Windows.Forms.Label lblGameOver;
     }
 }
 
