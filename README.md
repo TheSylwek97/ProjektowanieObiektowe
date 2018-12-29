@@ -1,1 +1,1 @@
-# ProjektowanieObiektowe
+# Projekt C# - Gra Snake
