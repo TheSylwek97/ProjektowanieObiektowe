@@ -70,7 +70,7 @@ namespace Snake
             //SprawdŸ zakoñczenie gry - GameOver
             if (Settings.GameOver == true)
             {
-                //SprwdŸ czy Event jest aktywny
+                //SprwdŸ czy Enter zosta³ aktywowany
                 if (Input.KeyPressed(Keys.Enter))
                 {
                     StartGame();
@@ -94,7 +94,7 @@ namespace Snake
                 MovePlayer();
             }
 
-            //Odœwie¿ canvas
+            //Odœwie¿ canvas(pictureBox) + aktualizacja grafik
             pbCanvas.Invalidate();
         }
 
@@ -128,14 +128,14 @@ namespace Snake
                                                       Settings.Width, Settings.Height));
                 }
             }
-            else
+           /* else
             {
                 string gameOver = "Koniec gry \nTwój wynik to: "
                                    + Settings.Score
                                    + "\nWciœnij Enter aby zagraæ ponownie";
                 lblGameOver.Text = gameOver;
                 lblGameOver.Visible = true;
-            }
+            }*/
         }
 
         private void MovePlayer()
@@ -175,7 +175,7 @@ namespace Snake
 
         private void lblGameOver_Click(object sender, EventArgs e)
         {
-            lblGameOver.Visible = false;
+            //lblGameOver.Visible = false;
         }
 
     }
