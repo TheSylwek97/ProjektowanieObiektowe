@@ -215,7 +215,7 @@ namespace Snake
 
         private void Eat()
         {
-            //Powiêkszanie d³ugoœci wêŸa
+            //Powiêkszanie d³ugoœci wê¿a
             Circle food = new Circle();
             food.X = Snake[Snake.Count - 1].X;
             food.Y = Snake[Snake.Count - 1].Y;
