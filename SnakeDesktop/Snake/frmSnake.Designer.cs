@@ -42,7 +42,7 @@ namespace Snake
             this.pbCanvas.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.pbCanvas.Location = new System.Drawing.Point(13, 13);
             this.pbCanvas.Name = "pbCanvas";
-            this.pbCanvas.Size = new System.Drawing.Size(542, 308);
+            this.pbCanvas.Size = new System.Drawing.Size(611, 308);
             this.pbCanvas.TabIndex = 0;
             this.pbCanvas.TabStop = false;
             this.pbCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.pbCanvas_Paint);
@@ -52,7 +52,7 @@ namespace Snake
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(571, 13);
+            this.label1.Location = new System.Drawing.Point(630, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 37);
             this.label1.TabIndex = 1;
@@ -63,7 +63,7 @@ namespace Snake
             this.lblSocre.AutoSize = true;
             this.lblSocre.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblSocre.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblSocre.Location = new System.Drawing.Point(571, 68);
+            this.lblSocre.Location = new System.Drawing.Point(630, 79);
             this.lblSocre.Name = "lblSocre";
             this.lblSocre.Size = new System.Drawing.Size(0, 37);
             this.lblSocre.TabIndex = 2;
