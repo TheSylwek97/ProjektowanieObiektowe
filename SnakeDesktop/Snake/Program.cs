@@ -18,5 +18,7 @@ namespace Snake
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmSnake());
         }
+
+
     }
 }

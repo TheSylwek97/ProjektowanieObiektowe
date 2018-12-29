@@ -21,13 +21,13 @@ namespace Snake
 
         public Settings()
         {
-            Width = 16;
-            Height = 16;
+            Width = 15;
+            Height = 15;
             Speed = 14;
             Score = 0;
             Points = 10;
             GameOver = false;
-            direction = Direction.Down;
+            direction = Direction.Right;
         }
     }
 }
