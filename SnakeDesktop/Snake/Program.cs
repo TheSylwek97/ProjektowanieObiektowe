@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Snake
@@ -9,7 +6,7 @@ namespace Snake
     static class Program
     {
         /// <summary>
-        /// The main entry point for the application.
+        /// Mechanika i interface aplikacji s¹ w pozosta³ych klasach
         /// </summary>
         [STAThread]
         static void Main()
