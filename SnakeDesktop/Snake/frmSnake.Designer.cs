@@ -45,7 +45,6 @@ namespace Snake
             this.pbCanvas.Size = new System.Drawing.Size(542, 308);
             this.pbCanvas.TabIndex = 0;
             this.pbCanvas.TabStop = false;
-            this.pbCanvas.Click += new System.EventHandler(this.pbCanvas_Click);
             this.pbCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.pbCanvas_Paint);
             // 
             // label1
@@ -75,13 +74,13 @@ namespace Snake
             this.lblGameOver.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblGameOver.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblGameOver.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblGameOver.Location = new System.Drawing.Point(48, 93);
+            this.lblGameOver.Location = new System.Drawing.Point(27, 79);
             this.lblGameOver.Name = "lblGameOver";
-            this.lblGameOver.Size = new System.Drawing.Size(378, 55);
+            this.lblGameOver.Padding = new System.Windows.Forms.Padding(10);
+            this.lblGameOver.Size = new System.Drawing.Size(398, 75);
             this.lblGameOver.TabIndex = 3;
             this.lblGameOver.Text = "Game Over Text";
             this.lblGameOver.Visible = false;
-            this.lblGameOver.Click += new System.EventHandler(this.lblGameOver_Click);
             // 
             // frmSnake
             // 

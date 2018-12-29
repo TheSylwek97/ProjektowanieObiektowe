@@ -1,15 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
-// This is the code for your desktop app.
-// Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
 
 namespace Snake
 {
@@ -25,7 +17,7 @@ namespace Snake
             // Ustaw ustawinia na domyœlne
             new Settings();
 
-            //Usaw szybkoœæ gry i uruchom licznik
+            //Usaw szybkoœæ gry i uruchom licznik, aby Snake móg³ siê póŸniej poruszaæ
             gameTimer.Interval = 1000 / Settings.Speed;
             gameTimer.Tick += UpdateScreen;
             gameTimer.Start();
@@ -36,6 +28,7 @@ namespace Snake
 
         private void StartGame()
         {
+            //Okno zakoñczenia gry ukryte
             lblGameOver.Visible = false;
 
             // Ustaw ustawinia na domyœlne
@@ -48,13 +41,16 @@ namespace Snake
             head.Y = 5;
             Snake.Add(head);
 
+            //Zapisz wynik do wyœwietlania
             lblSocre.Text = Settings.Score.ToString();
+                       
             GenerateFood();
         }
 
         //U³ó¿ losowo przedmioty 'pokarmu'
         private void GenerateFood()
         {
+            //Ustalenie granic obszaru pola do wygynerowania 'pokarmu'
             int maxXPos = pbCanvas.Size.Width / Settings.Width;
             int maxYPos = pbCanvas.Size.Height / Settings.Height;
 
@@ -70,13 +66,14 @@ namespace Snake
             //SprawdŸ zakoñczenie gry - GameOver
             if (Settings.GameOver == true)
             {
-                //SprwdŸ czy Enter zosta³ aktywowany
+                //SprwdŸ czy Enter zosta³ aktywowany uruchamiaj¹cy grê od nowa
                 if (Input.KeyPressed(Keys.Enter))
                 {
                     StartGame();
                 }
             }
 
+            //Ustaw kierunek do poruszania siê wê¿a
             else
             {
                 if (Input.KeyPressed(Keys.Right) && Settings.direction != Direction.Left)
@@ -94,7 +91,7 @@ namespace Snake
                 MovePlayer();
             }
 
-            //Odœwie¿ canvas(pictureBox) + aktualizacja grafik
+            //Odœwie¿ canvas(pictureBox) i aktualizauj grafiki
             pbCanvas.Invalidate();
         }
 
@@ -104,17 +101,17 @@ namespace Snake
 
             if (!Settings.GameOver)
             {
-                //Ustaw kolor Sanke'a
+                //Do ustawienia koloru Sanke'a
                 Brush snakeColor;
 
 
-                //Rysuj Snake'a
+                //Rysowanie elementów
                 for (int i = 0; i < Snake.Count; i++)
                 {                    
                     if (i == 0)
                         snakeColor = Brushes.Black; //malowanie g³owy Snake'a
                     else
-                        snakeColor = Brushes.Green; // malowanie cia³a Snake'a
+                        snakeColor = Brushes.DimGray; // malowanie cia³a Snake'a
 
                     //Rysuj Snake'a
                     canvas.FillEllipse(snakeColor,
@@ -131,7 +128,7 @@ namespace Snake
 
            else
             {
-                string gameOver = "Koniec gry \nTwój wynik to: "
+                string gameOver = "Koniec gry! \nTwój wynik to: "
                                    + Settings.Score
                                    + "\nWciœnij Enter aby zagraæ ponownie";
                 lblGameOver.Text = gameOver;
@@ -164,6 +161,7 @@ namespace Snake
                             Snake[i].Y--;
                             break;
                     }
+
                     //Pobierz maxymaln¹ pozycje X i Y
                     int maxXPos = pbCanvas.Width / Settings.Width;
                     int maxYPos = pbCanvas.Height / Settings.Height;
@@ -203,11 +201,6 @@ namespace Snake
             }
         }       
 
-        //zbêdny event ale musi zostaæ bo app g³ubi po³¹czenie
-        private void lblGameOver_Click(object sender, EventArgs e){}
-        //zbêdny event ale musi zostaæ bo app g³ubi po³¹czenie
-        private void pbCanvas_Click(object sender, EventArgs e){}
-
         private void Die()
         {
             Settings.GameOver = true;
@@ -219,7 +212,6 @@ namespace Snake
             Circle food = new Circle();
             food.X = Snake[Snake.Count - 1].X;
             food.Y = Snake[Snake.Count - 1].Y;
-
             Snake.Add(food);
 
             //Naliczanie punktów
@@ -229,6 +221,7 @@ namespace Snake
             GenerateFood();
         }
 
+        //Uruchomienie eventów aby reagowa³y na klawisze klawiatury
         private void frmSnake_KeyDown(object sender, KeyEventArgs e)
         {
             Input.ChangeState(e.KeyCode, true);
@@ -240,3 +233,4 @@ namespace Snake
         }
     }
 }
+//Mechanika gry silnie inspirowana poradnikiem Michiela Woutersa
