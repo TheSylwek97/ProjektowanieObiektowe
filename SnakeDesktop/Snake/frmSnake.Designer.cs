@@ -45,6 +45,7 @@ namespace Snake
             this.pbCanvas.Size = new System.Drawing.Size(542, 308);
             this.pbCanvas.TabIndex = 0;
             this.pbCanvas.TabStop = false;
+            this.pbCanvas.Click += new System.EventHandler(this.pbCanvas_Click);
             this.pbCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.pbCanvas_Paint);
             // 
             // label1
@@ -95,6 +96,8 @@ namespace Snake
             this.MaximizeBox = false;
             this.Name = "frmSnake";
             this.Text = "Snake";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmSnake_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmSnake_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pbCanvas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

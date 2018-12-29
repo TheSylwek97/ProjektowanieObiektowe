@@ -102,7 +102,7 @@ namespace Snake
         {
             Graphics canvas = e.Graphics;
 
-            if (Settings.GameOver != false)
+            if (!Settings.GameOver)
             {
                 //Ustaw kolor Sanke'a
                 Brush snakeColor;
@@ -128,19 +128,20 @@ namespace Snake
                                                       Settings.Width, Settings.Height));
                 }
             }
-           /* else
+
+           else
             {
                 string gameOver = "Koniec gry \nTwój wynik to: "
                                    + Settings.Score
                                    + "\nWciœnij Enter aby zagraæ ponownie";
                 lblGameOver.Text = gameOver;
                 lblGameOver.Visible = true;
-            }*/
+            }
         }
 
         private void MovePlayer()
         {
-            for (int i = Snake.Count - 1; i > 0; i--)
+            for (int i = Snake.Count - 1; i >= 0; i--)
             {
                 //Poruszaj g³ow¹
                 if (i == 0)
@@ -163,6 +164,35 @@ namespace Snake
                             Snake[i].Y--;
                             break;
                     }
+                    //Pobierz maxymaln¹ pozycje X i Y
+                    int maxXPos = pbCanvas.Width / Settings.Width;
+                    int maxYPos = pbCanvas.Height / Settings.Height;
+
+                    //Wykryj kolizje z ramk¹ gry
+                    if(Snake[i].X < 0 || Snake[i].Y < 0
+                        || Snake[i].X >= maxXPos || Snake[i].Y >= maxYPos)
+                    {
+                        Die();
+                    }
+                    
+                    //Wykryj kolizje z reszt¹ cia³a
+                    for(int j=1; j<Snake.Count; j++)
+                    {
+                        if(Snake[i].X == Snake[j].X &&
+                            Snake[i].Y == Snake[j].Y)
+                        {
+                            Die();
+                        }
+                    }
+
+                    //Wykryj kolizje z jedzeniem
+                    if(Snake[0].X == food.X &&
+                        Snake[0].Y == food.Y)
+                    {
+                        Eat();
+                    }
+
+
                 }
                 //Poruszaj reszt¹ cia³a
                 else
@@ -171,12 +201,42 @@ namespace Snake
                     Snake[i].Y = Snake[i - 1].Y;
                 }
             }
-        }
+        }       
 
-        private void lblGameOver_Click(object sender, EventArgs e)
+        //zbêdny event ale musi zostaæ bo app g³ubi po³¹czenie
+        private void lblGameOver_Click(object sender, EventArgs e){}
+        //zbêdny event ale musi zostaæ bo app g³ubi po³¹czenie
+        private void pbCanvas_Click(object sender, EventArgs e){}
+
+        private void Die()
         {
-            //lblGameOver.Visible = false;
+            Settings.GameOver = true;
         }
 
+        private void Eat()
+        {
+            //Powiêkszanie d³ugoœci wêŸa
+            Circle food = new Circle();
+            food.X = Snake[Snake.Count - 1].X;
+            food.Y = Snake[Snake.Count - 1].Y;
+
+            Snake.Add(food);
+
+            //Naliczanie punktów
+            Settings.Score += Settings.Points;
+            lblSocre.Text = Settings.Score.ToString();
+
+            GenerateFood();
+        }
+
+        private void frmSnake_KeyDown(object sender, KeyEventArgs e)
+        {
+            Input.ChangeState(e.KeyCode, true);
+        }
+
+        private void frmSnake_KeyUp(object sender, KeyEventArgs e)
+        {
+            Input.ChangeState(e.KeyCode, false);
+        }
     }
 }
