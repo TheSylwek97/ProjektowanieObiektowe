@@ -134,6 +134,7 @@ namespace Snake
             //Odœwie¿ canvas(pictureBox) i aktualizauj grafiki
             pbCanvas.Invalidate();
         }
+
         /// <summary>
         /// Rysuj¹c wê¿a ustal ró¿ne kolory dla wê¿a i pokarmu - opcjonalnie inne kolory dla g³owy wê¿a i jego cia³a
         /// U¿yj pêtli, aby ka¿dy segment wê¿a by³ wyœwietlany.
@@ -186,7 +187,6 @@ namespace Snake
         /// Do ruchu wê¿a u¿yj pêtli, aby w ruchu by³ ka¿dy segment
         /// Dodaj kolizje z pokarmem, cia³em wê¿a i ramk¹ gry (pobierz jej maksymalne wspó³rzêdne do tego)
         /// </summary>
-
         private void MovePlayer()
         {
             for (int i = Snake.Count - 1; i >= 0; i--)
@@ -238,7 +238,10 @@ namespace Snake
                     if(Snake[0].X == food.X &&
                         Snake[0].Y == food.Y)
                     {
-                        Eat();
+                        ClassLib.Eat(food, Snake);
+                        food = ClassLib.GenerateFood(pbCanvas.Size.Width, pbCanvas.Size.Height);
+                        UpdataSocre();
+
                     }
 
 
@@ -252,23 +255,29 @@ namespace Snake
             }
         }
 
+        private void UpdataSocre()
+        {
+            lblSocre.Text = Settings.Score.ToString();
+        }
+
+        /*
         /// <summary>
         /// Uruchom okno dialogowe zakoñczenia gry w przypadku skucia wê¿a
         /// </summary>
-        /*
         private void Die()
         {
             Settings.GameOver = true;
         }
         */
+        /*
+        
         /// <summary>
         /// W metodzie zjadania przez wê¿a pokarmu nie tylko zwiêkszaj jego d³ugoœæ ale te¿ dodawaj punkty graczowi.
         /// </summary>
-        
         private void Eat()
         {
             //Powiêkszanie d³ugoœci wê¿a
-            Circle food = new Circle();
+            
             food.X = Snake[Snake.Count - 1].X;
             food.Y = Snake[Snake.Count - 1].Y;
             Snake.Add(food);
@@ -279,7 +288,7 @@ namespace Snake
 
             food = ClassLib.GenerateFood(pbCanvas.Size.Width, pbCanvas.Size.Height);
         }
-        
+        */
 
         /// <summary>
         /// Uruchom eventy aby reagowa³y na klawisze klawiatury
@@ -297,7 +306,3 @@ namespace Snake
         }
     }
 }
-
-///<summary>
-///Mechanika gry silnie inspirowana poradnikiem Michiela Woutersa
-///</summary>

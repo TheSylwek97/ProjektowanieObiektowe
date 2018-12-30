@@ -88,7 +88,26 @@ namespace ClassLibrary_Logic
             return food;
         }
 
+        /// <summary>
+        /// W metodzie zjadania przez węża pokarmu nie tylko zwiększaj jego długość ale też dodawaj punkty graczowi.
+        /// </summary>
 
+        public static void Eat(Circle food, List<Circle> Snake)
+        {
+            //Powiększanie długości węża
+
+            food.X = Snake[Snake.Count - 1].X;
+            food.Y = Snake[Snake.Count - 1].Y;
+            Snake.Add(food);
+
+            //Naliczanie punktów
+            Settings.Score += Settings.Points;
+
+        }
 
     }
 }
+
+///<summary>
+///Mechanika gry silnie inspirowana poradnikiem Michiela Woutersa
+///</summary>
