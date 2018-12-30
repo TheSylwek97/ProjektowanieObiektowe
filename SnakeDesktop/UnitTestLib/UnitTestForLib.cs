@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ClassLibrary_Logic;
 using System.Collections.Generic;
 using System.Drawing;
+using Snake;
 
 namespace UnitTestLib
 {

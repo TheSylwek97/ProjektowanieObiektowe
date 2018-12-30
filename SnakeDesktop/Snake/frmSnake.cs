@@ -48,7 +48,7 @@ namespace Snake
             //Okno zakoñczenia gry ukryte
             lblGameOver.Visible = false;
 
-            // Ustaw ustawiania na domyœlne
+            //Ustaw ustawiania na domyœlne
             new Settings();
 
             //Stwórz nowy obiekt gracza
@@ -60,8 +60,8 @@ namespace Snake
 
             //Zapisz wynik do wyœwietlania
             lblSocre.Text = Settings.Score.ToString();
-                       
-            GenerateFood();
+
+            food = ClassLib.GenerateFood(pbCanvas.Size.Width, pbCanvas.Size.Height);
         }
 
         /// <summary>
@@ -74,6 +74,7 @@ namespace Snake
         /// </summary>
 
         //U³ó¿ losowo przedmioty 'pokarmu'
+        /*
         private void GenerateFood()
         {
             //Ustalenie granic obszaru pola do wygenerowania  'pokarmu'
@@ -86,6 +87,7 @@ namespace Snake
             food.Y = random.Next(0, maxYPos);
 
         }
+        */
 
         /// <summary>
         /// Aktualizowanie okna
@@ -219,7 +221,7 @@ namespace Snake
                     if(Snake[i].X < 0 || Snake[i].Y < 0
                         || Snake[i].X >= maxXPos || Snake[i].Y >= maxYPos)
                     {
-                        Die();
+                        ClassLib.Die();
                     }
 
                     //Wykryj kolizje z reszt¹ cia³a
@@ -228,7 +230,7 @@ namespace Snake
                         if(Snake[i].X == Snake[j].X &&
                             Snake[i].Y == Snake[j].Y)
                         {
-                            Die();
+                            ClassLib.Die();
                         }
                     }
 
@@ -253,16 +255,16 @@ namespace Snake
         /// <summary>
         /// Uruchom okno dialogowe zakoñczenia gry w przypadku skucia wê¿a
         /// </summary>
-
+        /*
         private void Die()
         {
             Settings.GameOver = true;
         }
-
+        */
         /// <summary>
         /// W metodzie zjadania przez wê¿a pokarmu nie tylko zwiêkszaj jego d³ugoœæ ale te¿ dodawaj punkty graczowi.
         /// </summary>
-
+        
         private void Eat()
         {
             //Powiêkszanie d³ugoœci wê¿a
@@ -275,8 +277,9 @@ namespace Snake
             Settings.Score += Settings.Points;
             lblSocre.Text = Settings.Score.ToString();
 
-            GenerateFood();
+            food = ClassLib.GenerateFood(pbCanvas.Size.Width, pbCanvas.Size.Height);
         }
+        
 
         /// <summary>
         /// Uruchom eventy aby reagowa³y na klawisze klawiatury

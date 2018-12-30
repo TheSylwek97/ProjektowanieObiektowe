@@ -52,15 +52,43 @@ namespace ClassLibrary_Logic
             Y = 0;
         }
     }
-    public class ClassLib
+    public class ClassLib 
     {
         /// <summary>
         /// Uruchom okno dialogowe zakończenia gry w przypadku skucia węża
         /// </summary>
-        public void Die()
+        public static void Die()
         {
            Settings.GameOver = true;
         }
-        
+
+
+        /// <summary>
+        /// Ułóż losowo przedmioty 'pokarmu', używając metodę random.Next
+        /// Ustal granice obszaru pola dla wygenerowanego 'pokarmu'
+        /// <remarks>
+        /// Jako że elementy pokarmu mają być losowe ustal mi maksymalny zakres osi X i Y 
+        /// z wyliczonych wcześniej ograniczeń
+        /// </remarks>
+        /// </summary>
+
+        //Ułóż losowo przedmioty 'pokarmu'
+        public static Circle GenerateFood(int width, int height) 
+        {
+            //Ustalenie granic obszaru pola do wygenerowania  'pokarmu'
+            int maxXPos = width / Settings.Width;
+            int maxYPos = height / Settings.Height;
+
+
+            Random random = new Random();
+            Circle food = new Circle();
+            food.X = random.Next(0, maxXPos);
+            food.Y = random.Next(0, maxYPos);
+
+            return food;
+        }
+
+
+
     }
 }
