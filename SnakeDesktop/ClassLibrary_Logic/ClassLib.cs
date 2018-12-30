@@ -91,7 +91,6 @@ namespace ClassLibrary_Logic
         /// <summary>
         /// W metodzie zjadania przez węża pokarmu nie tylko zwiększaj jego długość ale też dodawaj punkty graczowi.
         /// </summary>
-
         public static void Eat(Circle food, List<Circle> Snake)
         {
             //Powiększanie długości węża

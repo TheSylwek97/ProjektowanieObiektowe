@@ -11,12 +11,6 @@ namespace Snake
         private List<Circle> Snake = new List<Circle>();
         private Circle food = new Circle();
 
-        /// <summary>
-        ///Zaraz po uruchomieniu aplikacji ustaw domyœlne ustawienia z klasy Settings.
-        ///Ustaw szybkoœæ gry i uruchom licznik u¿ywaj¹c timera, aby Snake móg³ siê póŸniej poruszaæ.
-        ///Rozpocznij now¹ grê.
-        /// </summary>
-
         public frmSnake()
         {
             InitializeComponent();
@@ -32,16 +26,6 @@ namespace Snake
             //Rozpocznij now¹ grê
             StartGame();
         }
-
-        /// <summary>
-        ///Ukryj okno(label) zakoñczenia gry.
-        ///Ustaw ustawiania na domyœlne
-        ///Stwórz nowy obiekt gracza – Snake’a, tworz¹c instancje obiektu Cricle, ustalony w innej metodzie
-        ///<remarks>
-        ///Utworzony pierwszy segment wê¿a to jego g³owa - ona jest zawsze i ustal jej wspó³rzêdne
-        ///</remarks>
-        ///Zapisz wynik do wyœwietlania
-        /// </summary>
 
         private void StartGame()
         {
@@ -64,17 +48,8 @@ namespace Snake
             food = ClassLib.GenerateFood(pbCanvas.Size.Width, pbCanvas.Size.Height);
         }
 
-        /// <summary>
-        /// U³ó¿ losowo przedmioty 'pokarmu', u¿ywaj¹c metodê random.Next
-        /// Ustal granice obszaru pola dla wygenerowanego 'pokarmu'
-        /// <remarks>
-        /// Jako ¿e elementy pokarmu maj¹ byæ losowe ustal mi maksymalny zakres osi X i Y 
-        /// z wyliczonych wczeœniej ograniczeñ
-        /// </remarks>
-        /// </summary>
-
-        //U³ó¿ losowo przedmioty 'pokarmu'
         /*
+        //U³ó¿ losowo przedmioty 'pokarmu'
         private void GenerateFood()
         {
             //Ustalenie granic obszaru pola do wygenerowania  'pokarmu'
@@ -86,8 +61,7 @@ namespace Snake
             food.X = random.Next(0, maxXPos);
             food.Y = random.Next(0, maxYPos);
 
-        }
-        */
+        }*/
 
         /// <summary>
         /// Aktualizowanie okna
@@ -99,7 +73,6 @@ namespace Snake
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void UpdateScreen(object sender, EventArgs e)
         {
 
@@ -183,10 +156,6 @@ namespace Snake
             }
         }
 
-        /// <summary>
-        /// Do ruchu wê¿a u¿yj pêtli, aby w ruchu by³ ka¿dy segment
-        /// Dodaj kolizje z pokarmem, cia³em wê¿a i ramk¹ gry (pobierz jej maksymalne wspó³rzêdne do tego)
-        /// </summary>
         private void MovePlayer()
         {
             for (int i = Snake.Count - 1; i >= 0; i--)
@@ -255,25 +224,19 @@ namespace Snake
             }
         }
 
+        //Naliczanie punktów
         private void UpdataSocre()
         {
             lblSocre.Text = Settings.Score.ToString();
         }
 
         /*
-        /// <summary>
-        /// Uruchom okno dialogowe zakoñczenia gry w przypadku skucia wê¿a
-        /// </summary>
         private void Die()
         {
             Settings.GameOver = true;
-        }
-        */
+        }*/
+
         /*
-        
-        /// <summary>
-        /// W metodzie zjadania przez wê¿a pokarmu nie tylko zwiêkszaj jego d³ugoœæ ale te¿ dodawaj punkty graczowi.
-        /// </summary>
         private void Eat()
         {
             //Powiêkszanie d³ugoœci wê¿a
@@ -287,12 +250,7 @@ namespace Snake
             lblSocre.Text = Settings.Score.ToString();
 
             food = ClassLib.GenerateFood(pbCanvas.Size.Width, pbCanvas.Size.Height);
-        }
-        */
-
-        /// <summary>
-        /// Uruchom eventy aby reagowa³y na klawisze klawiatury
-        /// </summary>
+        }*/
 
         //Uruchomienie eventów aby reagowa³y na klawisze klawiatury
         private void frmSnake_KeyDown(object sender, KeyEventArgs e)

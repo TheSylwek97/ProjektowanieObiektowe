@@ -8,7 +8,7 @@ using Snake;
 namespace UnitTestLib
 {
     [TestClass]
-    public class UnitTestForLib
+    public class UnitTestForLib 
     {
         [TestMethod]
         public void TestMethodForSettings()
@@ -24,8 +24,21 @@ namespace UnitTestLib
         }
 
         [TestMethod]
-        public void TestMethodForCircle()
+        public void TestMethodForDie()
         {
+           // Console.WriteLine(ClassLib.Die());
+        }
+        
+        [TestMethod]
+        public void TestMethodForGenerateFood() 
+        {
+
+        }
+
+        [TestMethod]
+        public void TestMethodForEat()
+        {
+
         }
     }
 }
