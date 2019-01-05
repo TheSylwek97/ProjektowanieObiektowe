@@ -6,16 +6,19 @@ using ClassLibrary_Logic;
 
 namespace Snake
 {
-    public partial class frmSnake : Form
+    public partial class FrmSnake : Form
     {
         private List<Circle> Snake = new List<Circle>();
         private Circle food = new Circle();
-
-        public frmSnake()
+        
+        /// <summary>
+        /// Konstruktor nadaj¹cy ustawione wartoœci podczas uruchomienia aplikacji
+        /// </summary>
+        public FrmSnake()
         {
             InitializeComponent();
 
-            // Ustaw ustawinia na domyœlne
+            //Nadaj ustawinia na domyœlne
             new Settings();
 
             //Ustaw szybkoœæ gry i uruchom licznik, aby Snake móg³ siê póŸniej poruszaæ
@@ -45,7 +48,7 @@ namespace Snake
             //Zapisz wynik do wyœwietlania
             lblSocre.Text = Settings.Score.ToString();
 
-            food = ClassLib.GenerateFood(pbCanvas.Size.Width, pbCanvas.Size.Height);
+            food = ClassLib.GenerateFood(PbCanvas.Size.Width, PbCanvas.Size.Height);
         }
 
         /*
@@ -89,23 +92,23 @@ namespace Snake
             //Ustaw kierunek do poruszania siê wê¿a
             else
             {
-                if (Input.KeyPressed(Keys.Right) && Settings.direction != Direction.Left)
-                    Settings.direction = Direction.Right;
+                if (Input.KeyPressed(Keys.Right) && Settings.Direction != Direction.Left)
+                    Settings.Direction = Direction.Right;
 
-                else if (Input.KeyPressed(Keys.Left) && Settings.direction != Direction.Right)
-                    Settings.direction = Direction.Left;
+                else if (Input.KeyPressed(Keys.Left) && Settings.Direction != Direction.Right)
+                    Settings.Direction = Direction.Left;
 
-                else if (Input.KeyPressed(Keys.Up) && Settings.direction != Direction.Down)
-                    Settings.direction = Direction.Up;
+                else if (Input.KeyPressed(Keys.Up) && Settings.Direction != Direction.Down)
+                    Settings.Direction = Direction.Up;
 
-                else if (Input.KeyPressed(Keys.Down) && Settings.direction != Direction.Up)
-                    Settings.direction = Direction.Down;
+                else if (Input.KeyPressed(Keys.Down) && Settings.Direction != Direction.Up)
+                    Settings.Direction = Direction.Down;
 
                 MovePlayer();
             }
 
             //Odœwie¿ canvas(pictureBox) i aktualizauj grafiki
-            pbCanvas.Invalidate();
+            PbCanvas.Invalidate();
         }
 
         /// <summary>
@@ -115,7 +118,7 @@ namespace Snake
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void pbCanvas_Paint(object sender, PaintEventArgs e)
+        private void PbCanvas_Paint(object sender, PaintEventArgs e)
         {
             Graphics canvas = e.Graphics;
 
@@ -163,7 +166,7 @@ namespace Snake
                 //Poruszaj g³ow¹
                 if (i == 0)
                 {
-                    switch (Settings.direction)
+                    switch (Settings.Direction)
                     {
                         case Direction.Right:
                             Snake[i].X++;
@@ -183,8 +186,8 @@ namespace Snake
                     }
 
                     //Pobierz maxymaln¹ pozycje X i Y
-                    int maxXPos = pbCanvas.Width / Settings.Width;
-                    int maxYPos = pbCanvas.Height / Settings.Height;
+                    int maxXPos = PbCanvas.Width / Settings.Width;
+                    int maxYPos = PbCanvas.Height / Settings.Height;
 
                     //Wykryj kolizje z ramk¹ gry
                     if(Snake[i].X < 0 || Snake[i].Y < 0
@@ -208,7 +211,7 @@ namespace Snake
                         Snake[0].Y == food.Y)
                     {
                         ClassLib.Eat(food, Snake);
-                        food = ClassLib.GenerateFood(pbCanvas.Size.Width, pbCanvas.Size.Height);
+                        food = ClassLib.GenerateFood(PbCanvas.Size.Width, PbCanvas.Size.Height);
                         UpdataSocre();
 
                     }
@@ -253,12 +256,12 @@ namespace Snake
         }*/
 
         //Uruchomienie eventów aby reagowa³y na klawisze klawiatury
-        private void frmSnake_KeyDown(object sender, KeyEventArgs e)
+        private void FrmSnake_KeyDown(object sender, KeyEventArgs e)
         {
             Input.ChangeState(e.KeyCode, true);
         }
 
-        private void frmSnake_KeyUp(object sender, KeyEventArgs e)
+        private void FrmSnake_KeyUp(object sender, KeyEventArgs e)
         {
             Input.ChangeState(e.KeyCode, false);
         }

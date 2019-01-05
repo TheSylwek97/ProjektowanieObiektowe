@@ -20,19 +20,22 @@ namespace UnitTestLib
             Console.WriteLine("Score " + Settings.Score);
             Console.WriteLine("Points " + Settings.Points);
             Console.WriteLine("GameOver " + Settings.GameOver);
-            Console.WriteLine("direction " + Settings.direction);
+            Console.WriteLine("direction " + Settings.Direction);
         }
 
         [TestMethod]
         public void TestMethodForDie()
         {
-           // Console.WriteLine(ClassLib.Die());
+            if(Settings.GameOver == true)
+                Console.WriteLine("True - game is finished");
+            else
+                Console.WriteLine("False - game is still running");
         }
         
         [TestMethod]
-        public void TestMethodForGenerateFood() 
+        public void TestMethodForGenerateFood()
         {
-
+          
         }
 
         [TestMethod]

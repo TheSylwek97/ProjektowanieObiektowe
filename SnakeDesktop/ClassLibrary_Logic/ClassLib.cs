@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
 
 namespace ClassLibrary_Logic
 {
@@ -24,7 +20,7 @@ namespace ClassLibrary_Logic
         public static int Score { get; set; }
         public static int Points { get; set; }
         public static bool GameOver { get; set; }
-        public static Direction direction { get; set; }
+        public static Direction Direction { get; set; }
 
         public Settings()
         {
@@ -34,7 +30,7 @@ namespace ClassLibrary_Logic
             Score = 0;
             Points = 10;
             GameOver = false;
-            direction = Direction.Right;
+            Direction = Direction.Right;
         }
     }
 

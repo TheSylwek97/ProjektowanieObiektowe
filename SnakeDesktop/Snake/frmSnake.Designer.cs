@@ -1,6 +1,9 @@
 namespace Snake
 {
-    partial class frmSnake
+    /// <summary>
+    /// 
+    /// </summary>
+    partial class FrmSnake
     {
         /// <summary>
         /// Required designer variable.
@@ -29,23 +32,23 @@ namespace Snake
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pbCanvas = new System.Windows.Forms.PictureBox();
+            this.PbCanvas = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblSocre = new System.Windows.Forms.Label();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.lblGameOver = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCanvas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbCanvas)).BeginInit();
             this.SuspendLayout();
             // 
-            // pbCanvas
+            // PbCanvas
             // 
-            this.pbCanvas.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pbCanvas.Location = new System.Drawing.Point(13, 13);
-            this.pbCanvas.Name = "pbCanvas";
-            this.pbCanvas.Size = new System.Drawing.Size(611, 308);
-            this.pbCanvas.TabIndex = 0;
-            this.pbCanvas.TabStop = false;
-            this.pbCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.pbCanvas_Paint);
+            this.PbCanvas.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.PbCanvas.Location = new System.Drawing.Point(13, 13);
+            this.PbCanvas.Name = "PbCanvas";
+            this.PbCanvas.Size = new System.Drawing.Size(611, 308);
+            this.PbCanvas.TabIndex = 0;
+            this.PbCanvas.TabStop = false;
+            this.PbCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.PbCanvas_Paint);
             // 
             // label1
             // 
@@ -82,7 +85,7 @@ namespace Snake
             this.lblGameOver.Text = "Game Over Text";
             this.lblGameOver.Visible = false;
             // 
-            // frmSnake
+            // FrmSnake
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -92,22 +95,22 @@ namespace Snake
             this.Controls.Add(this.lblGameOver);
             this.Controls.Add(this.lblSocre);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pbCanvas);
+            this.Controls.Add(this.PbCanvas);
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.Name = "frmSnake";
+            this.Name = "FrmSnake";
             this.Text = "Snake";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmSnake_KeyDown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmSnake_KeyUp);
-            ((System.ComponentModel.ISupportInitialize)(this.pbCanvas)).EndInit();
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmSnake_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmSnake_KeyUp);
+            ((System.ComponentModel.ISupportInitialize)(this.PbCanvas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pbCanvas;
+        private System.Windows.Forms.PictureBox PbCanvas;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblSocre;
         private System.Windows.Forms.Timer gameTimer;
