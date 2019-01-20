@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using ClassLibrary_Logic;
+using System.Resources;
 
 namespace Snake
 {
@@ -10,6 +11,7 @@ namespace Snake
     {
         private List<Circle> Snake = new List<Circle>();
         private Circle food = new Circle();
+        //notifyIcon.Icon = Properties.Resources.snakeicon;
         
         /// <summary>
         /// Konstruktor nadaj¹cy ustawione wartoœci podczas uruchomienia aplikacji
@@ -34,6 +36,9 @@ namespace Snake
         {
             //Okno zakoñczenia gry ukryte
             lblGameOver.Visible = false;
+
+            object O = Properties.Resources.ResourceManager.GetObject("snakeicon.png");
+            pictureBox1.Image = O as Image;
 
             //Ustaw ustawiania na domyœlne
             new Settings();
@@ -264,6 +269,11 @@ namespace Snake
         private void FrmSnake_KeyUp(object sender, KeyEventArgs e)
         {
             Input.ChangeState(e.KeyCode, false);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
