@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Snake</name>
+    </assembly>
+    <members>
+        <member name="T:Snake.FrmSnake">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Snake.FrmSnake.#ctor">
+            <summary>
+            Konstruktor nadający ustawione wartości podczas uruchomienia aplikacji
+            </summary>
+        </member>
+        <member name="M:Snake.FrmSnake.UpdateScreen(System.Object,System.EventArgs)">
+            <summary>
+            Aktualizowanie okna
+            Sprawdź czy gra jest zakończona, jeśli tak daj możliwość ponownego jest włączenia.
+            Gdy gra jest uruchomiona ustal kierunek węża i dodaj metodę umożliwiającą  jego poruszanie.
+            <remarks>
+            Dodaj metodę odświeżania pictureBoxa do aktualizowania grafik
+            </remarks>
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Snake.FrmSnake.PbCanvas_Paint(System.Object,System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Rysując węża ustal różne kolory dla węża i pokarmu - opcjonalnie inne kolory dla głowy węża i jego ciała
+            Użyj pętli, aby każdy segment węża był wyświetlany.
+            Utal co ma się wyświtlać po przegraniu 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Snake.FrmSnake.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Snake.FrmSnake.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Snake.FrmSnake.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Snake.Program.Main">
+            <summary>
+            Mechanika i interface aplikacji są w pozostałych klasach
+            </summary>
+        </member>
+        <member name="T:Snake.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Snake.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Snake.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,6 @@
+C:\Users\Izabela\Documents\ProjektowanieObiektowe\SnakeDesktop\ClassLibrary_Logic\bin\Debug\ClassLibrary_Logic.dll
+C:\Users\Izabela\Documents\ProjektowanieObiektowe\SnakeDesktop\ClassLibrary_Logic\bin\Debug\ClassLibrary_Logic.pdb
+C:\Users\Izabela\Documents\ProjektowanieObiektowe\SnakeDesktop\ClassLibrary_Logic\obj\Debug\ClassLibrary_Logic.csprojAssemblyReference.cache
+C:\Users\Izabela\Documents\ProjektowanieObiektowe\SnakeDesktop\ClassLibrary_Logic\obj\Debug\ClassLibrary_Logic.csproj.CoreCompileInputs.cache
+C:\Users\Izabela\Documents\ProjektowanieObiektowe\SnakeDesktop\ClassLibrary_Logic\obj\Debug\ClassLibrary_Logic.dll
+C:\Users\Izabela\Documents\ProjektowanieObiektowe\SnakeDesktop\ClassLibrary_Logic\obj\Debug\ClassLibrary_Logic.pdb
