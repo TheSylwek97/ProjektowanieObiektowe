@@ -11,6 +11,7 @@ namespace Snake
     {
         private List<Circle> Snake = new List<Circle>();
         private Circle food = new Circle();
+        /////private bool IsGameOver;
         //notifyIcon.Icon = Properties.Resources.snakeicon;
         
         /// <summary>
@@ -29,7 +30,27 @@ namespace Snake
             gameTimer.Start();
 
             //Rozpocznij now¹ grê
-            StartGame();
+            //StartGame();
+
+            
+            Hello();
+
+        }
+        ///<summary>
+        ///Okienko rozpoczynaj¹ce gre
+        ///</summary>
+        public void Hello()
+        {
+            const string message = "Snake";
+            const string caption = "Form Closing";
+            var result = MessageBox.Show(message, caption,
+                             MessageBoxButtons.YesNo,
+                             MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes)
+            {
+                StartGame();
+            }
         }
 
         private void StartGame()
@@ -92,6 +113,16 @@ namespace Snake
                 {
                     StartGame();
                 }
+                /*const string message = "GameOver";
+                const string caption = "Form Closing";
+                var result = MessageBox.Show(message, caption,
+                                 MessageBoxButtons.YesNo,
+                                 MessageBoxIcon.Information);
+
+                if (result == DialogResult.Yes)
+                {
+                    StartGame();
+                }*/
             }
 
             //Ustaw kierunek do poruszania siê wê¿a
@@ -126,7 +157,7 @@ namespace Snake
         private void PbCanvas_Paint(object sender, PaintEventArgs e)
         {
             Graphics canvas = e.Graphics;
-
+            
             if (!Settings.GameOver)
             {
                 //Do ustawienia koloru Sanke'a
@@ -154,14 +185,18 @@ namespace Snake
                 }
             }
 
-           else
-            {
-                string gameOver = "Koniec gry! \nTwój wynik to: "
+          if(Settings.GameOver)
+           {
+               /* string gameOver = "Koniec gry! \nTwój wynik to: "
                                    + Settings.Score
-                                   + "\nWciœnij Enter aby zagraæ ponownie";
-                lblGameOver.Text = gameOver;
-                lblGameOver.Visible = true;
-            }
+                                   + "\nWciœnij Enter/Ok aby zagraæ ponownie";
+                // lblGameOver.Text = gameOver;
+                // lblGameOver.Visible = true;
+                MessageBox.Show(gameOver);*/
+
+           } 
+        
+
         }
 
         private void MovePlayer()
