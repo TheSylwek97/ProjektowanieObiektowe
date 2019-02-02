@@ -70,21 +70,20 @@ namespace Snake.Properties {
         }
         
         /// <summary>
-        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Add Resource.
         /// </summary>
-        internal static System.Drawing.Bitmap snakeicon {
+        internal static string Image {
             get {
-                object obj = ResourceManager.GetObject("snakeicon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("Image", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap snakeimg {
+        internal static System.Drawing.Bitmap snakelogo {
             get {
-                object obj = ResourceManager.GetObject("snakeimg", resourceCulture);
+                object obj = ResourceManager.GetObject("snakelogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

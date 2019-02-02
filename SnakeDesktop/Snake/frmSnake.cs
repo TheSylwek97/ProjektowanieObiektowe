@@ -11,7 +11,6 @@ namespace Snake
     {
         private List<Circle> Snake = new List<Circle>();
         private Circle food = new Circle();
-        /////private bool IsGameOver;
         //notifyIcon.Icon = Properties.Resources.snakeicon;
         
         /// <summary>
@@ -33,27 +32,13 @@ namespace Snake
             //StartGame();
 
             
-            Hello();
+           StartGame();
 
         }
         ///<summary>
         ///Okienko rozpoczynaj¹ce gre
         ///</summary>
-        public void Hello()
-        {
-            const string message = "Snake";
-            const string caption = "Form Closing";
-            var result = MessageBox.Show(message, caption,
-                             MessageBoxButtons.YesNo,
-                             MessageBoxIcon.Information);
-
-            if (result == DialogResult.Yes)
-            {
-                StartGame();
-            }
-        }
-
-        private void StartGame()
+       private void StartGame()
         {
             //Okno zakoñczenia gry ukryte
             lblGameOver.Visible = false;
@@ -113,16 +98,7 @@ namespace Snake
                 {
                     StartGame();
                 }
-                /*const string message = "GameOver";
-                const string caption = "Form Closing";
-                var result = MessageBox.Show(message, caption,
-                                 MessageBoxButtons.YesNo,
-                                 MessageBoxIcon.Information);
-
-                if (result == DialogResult.Yes)
-                {
-                    StartGame();
-                }*/
+               
             }
 
             //Ustaw kierunek do poruszania siê wê¿a
@@ -187,12 +163,11 @@ namespace Snake
 
           if(Settings.GameOver)
            {
-               /* string gameOver = "Koniec gry! \nTwój wynik to: "
+                string gameOver = "Koniec gry! \nTwój wynik to: "
                                    + Settings.Score
                                    + "\nWciœnij Enter/Ok aby zagraæ ponownie";
-                // lblGameOver.Text = gameOver;
-                // lblGameOver.Visible = true;
-                MessageBox.Show(gameOver);*/
+                 lblGameOver.Text = gameOver;
+                 lblGameOver.Visible = true;
 
            } 
         
@@ -309,6 +284,11 @@ namespace Snake
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Informacje_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Snake");
         }
     }
 }

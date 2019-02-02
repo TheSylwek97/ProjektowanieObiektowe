@@ -38,6 +38,7 @@ namespace Snake
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.lblGameOver = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Informacje = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PbCanvas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -90,19 +91,21 @@ namespace Snake
             // 
             // pictureBox1
             // 
-            this.pictureBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Graphic;
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackgroundImage = global::Snake.Properties.Resources.snakeimg;
-            this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 120);
+            this.pictureBox1.Location = new System.Drawing.Point(43, 194);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.Size = new System.Drawing.Size(121, 126);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Tag = "0";
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // Informacje
+            // 
+            this.Informacje.Location = new System.Drawing.Point(64, 132);
+            this.Informacje.Name = "Informacje";
+            this.Informacje.Size = new System.Drawing.Size(87, 23);
+            this.Informacje.TabIndex = 5;
+            this.Informacje.Text = "Informacje";
+            this.Informacje.UseVisualStyleBackColor = true;
+            this.Informacje.Click += new System.EventHandler(this.Informacje_Click);
             // 
             // FrmSnake
             // 
@@ -111,11 +114,12 @@ namespace Snake
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.GrayText;
             this.ClientSize = new System.Drawing.Size(843, 361);
+            this.Controls.Add(this.Informacje);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblGameOver);
             this.Controls.Add(this.lblSocre);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PbCanvas);
-            this.Controls.Add(this.pictureBox1);
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -137,6 +141,7 @@ namespace Snake
         private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.Label lblGameOver;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button Informacje;
     }
 }
 
