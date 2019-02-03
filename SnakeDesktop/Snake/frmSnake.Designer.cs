@@ -38,7 +38,6 @@ namespace Snake
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.lblGameOver = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Informacje = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PbCanvas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -80,7 +79,7 @@ namespace Snake
             this.lblGameOver.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblGameOver.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblGameOver.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblGameOver.Location = new System.Drawing.Point(9, 21);
+            this.lblGameOver.Location = new System.Drawing.Point(9, 12);
             this.lblGameOver.Name = "lblGameOver";
             this.lblGameOver.Padding = new System.Windows.Forms.Padding(10);
             this.lblGameOver.Size = new System.Drawing.Size(398, 75);
@@ -91,21 +90,13 @@ namespace Snake
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(43, 194);
+            this.pictureBox1.Image = global::Snake.Properties.Resources.snakelogo;
+            this.pictureBox1.Location = new System.Drawing.Point(47, 196);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 126);
-            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.Size = new System.Drawing.Size(125, 124);
+            this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
-            // 
-            // Informacje
-            // 
-            this.Informacje.Location = new System.Drawing.Point(64, 132);
-            this.Informacje.Name = "Informacje";
-            this.Informacje.Size = new System.Drawing.Size(87, 23);
-            this.Informacje.TabIndex = 5;
-            this.Informacje.Text = "Informacje";
-            this.Informacje.UseVisualStyleBackColor = true;
-            this.Informacje.Click += new System.EventHandler(this.Informacje_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // FrmSnake
             // 
@@ -114,9 +105,8 @@ namespace Snake
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.GrayText;
             this.ClientSize = new System.Drawing.Size(843, 361);
-            this.Controls.Add(this.Informacje);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblGameOver);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblSocre);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PbCanvas);
@@ -141,7 +131,6 @@ namespace Snake
         private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.Label lblGameOver;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button Informacje;
     }
 }
 

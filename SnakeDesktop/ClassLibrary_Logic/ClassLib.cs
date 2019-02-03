@@ -56,7 +56,9 @@ namespace ClassLibrary_Logic
         public static void Die()
         {
            Settings.GameOver = true;
+           
         }
+        
 
 
         /// <summary>
