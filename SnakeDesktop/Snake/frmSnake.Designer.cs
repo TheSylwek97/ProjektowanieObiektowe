@@ -50,6 +50,7 @@ namespace Snake
             this.PbCanvas.Size = new System.Drawing.Size(611, 308);
             this.PbCanvas.TabIndex = 0;
             this.PbCanvas.TabStop = false;
+            this.PbCanvas.Click += new System.EventHandler(this.PbCanvas_Click);
             this.PbCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.PbCanvas_Paint);
             // 
             // label1
