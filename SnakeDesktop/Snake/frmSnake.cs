@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary_Logic;
 
@@ -11,6 +13,8 @@ namespace Snake
         private List<Circle> Snake = new List<Circle>();
         private Circle food = new Circle();
         
+        //notifyIcon.Icon = Properties.Resources.snakeicon;
+
         /// <summary>
         /// Konstruktor nadaj¹cy ustawione wartoœci podczas uruchomienia aplikacji
         /// </summary>
@@ -30,26 +34,96 @@ namespace Snake
             StartGame();
         }
 
+        ///<summary>
+        ///Okienko rozpoczynaj¹ce gre
+        ///</summary>
+
         private void StartGame()
         {
+            int i = 0;
             //Okno zakoñczenia gry ukryte
             lblGameOver.Visible = false;
 
             //Ustaw ustawiania na domyœlne
             new Settings();
-
             //Stwórz nowy obiekt gracza
             Snake.Clear();
-            Circle head = new Circle();
-            head.X = 0;
-            head.Y = 0;
-            Snake.Add(head);
+            
+            /*if(i == 0)
+            {
+                BoxHellow();
+                i++;
+            }
+            else*/
+                 Box();
+            
 
-            //Zapisz wynik do wyœwietlania
-            lblSocre.Text = Settings.Score.ToString();
-
-            food = ClassLib.GenerateFood(PbCanvas.Size.Width, PbCanvas.Size.Height);
+            
         }
+
+        /*private void BoxHellow()
+        {
+            string caption = "Snake";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result;
+            result = MessageBox.Show(messageText, caption, buttons);
+
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+
+                // Closes the parent form.
+                Circle head = new Circle();
+                head.X = 0;
+                head.Y = 0;
+                Snake.Add(head);
+
+                //Zapisz wynik do wyœwietlania
+                lblSocre.Text = Settings.Score.ToString();
+
+                food = ClassLib.GenerateFood(PbCanvas.Size.Width, PbCanvas.Size.Height);
+
+            }
+        }*/
+
+        private async void Box()
+        {
+           string caption = "Snake";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result;
+            string messageText = "Snake! ";
+            string messageText2 = "Projekt wykonany przez:";
+            string messageText3 = "Sylwia Miœkiewicz";
+            string messageText4 = "Klaudia W³osek";
+            string wintex = await TextMessage(messageText, messageText2, messageText3, messageText4);
+
+            result = MessageBox.Show(wintex.ToString(CultureInfo.InvariantCulture), caption, buttons);
+
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+
+                // Closes the parent form.
+                Circle head = new Circle();
+                head.X = 0;
+                head.Y = 0;
+                Snake.Add(head);
+
+                //Zapisz wynik do wyœwietlania
+                lblSocre.Text = Settings.Score.ToString();
+
+                food = ClassLib.GenerateFood(PbCanvas.Size.Width, PbCanvas.Size.Height);
+
+            }
+        }
+
+        private async Task<string> TextMessage(string messageText, string messageText2, string messageText3, string MessageText4)
+        {
+
+            return await Task.Run(() =>
+            {
+                return  messageText+ Environment.NewLine + messageText2 + Environment.NewLine + messageText3 + Environment.NewLine + MessageText4;
+            });
+        }
+
 
         /*
         //U³ó¿ losowo przedmioty 'pokarmu'
@@ -78,15 +152,18 @@ namespace Snake
         /// <param name="e"></param>
         private void UpdateScreen(object sender, EventArgs e)
         {
-
+             
             //SprawdŸ zakoñczenie gry - GameOver
             if (Settings.GameOver == true)
             {
                 //SprwdŸ czy Enter zosta³ aktywowany uruchamiaj¹cy grê od nowa
-                if (Input.KeyPressed(Keys.Enter))
-                {
+               // if (Input.KeyPressed(Keys.Enter))
+               // {
                     StartGame();
-                }
+                
+              //  }
+
+
             }
 
             //Ustaw kierunek do poruszania siê wê¿a
@@ -121,7 +198,7 @@ namespace Snake
         private void PbCanvas_Paint(object sender, PaintEventArgs e)
         {
             Graphics canvas = e.Graphics;
-
+            
             if (!Settings.GameOver)
             {
                 //Do ustawienia koloru Sanke'a
@@ -149,14 +226,17 @@ namespace Snake
                 }
             }
 
-           else
-            {
-                string gameOver = "Koniec gry! \nTwój wynik to: "
+          if(Settings.GameOver)
+          {
+                /*string gameOver = "Koniec gry! \nTwój wynik to: "
                                    + Settings.Score
-                                   + "\nWciœnij Enter aby zagraæ ponownie";
-                lblGameOver.Text = gameOver;
-                lblGameOver.Visible = true;
-            }
+                                   + "\nWciœnij Enter/Ok aby zagraæ ponownie";
+                 lblGameOver.Text = gameOver;
+                 lblGameOver.Visible = true;*/
+
+          } 
+        
+
         }
 
         private void MovePlayer()
@@ -265,5 +345,20 @@ namespace Snake
         {
             Input.ChangeState(e.KeyCode, false);
         }
+
+        private void Informacje_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            pictureBox1.Image = new Bitmap(Properties.Resources.snakelogo);
+        }
+
+        /*private void Informacje_MouseClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("Snake");
+        }*/
     }
 }

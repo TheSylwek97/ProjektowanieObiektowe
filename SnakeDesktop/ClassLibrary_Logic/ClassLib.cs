@@ -56,8 +56,8 @@ namespace ClassLibrary_Logic
         public static void Die()
         {
            Settings.GameOver = true;
+           
         }
-
 
         /// <summary>
         /// Ułóż losowo przedmioty 'pokarmu', używając metodę random.Next
