@@ -63,9 +63,28 @@ namespace Snake.Properties {
         /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Add resources.
         /// </summary>
+        public static string Icon {
+            get {
+                return ResourceManager.GetString("Icon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Add resources.
+        /// </summary>
         public static string Image {
             get {
                 return ResourceManager.GetString("Image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Icon podobny do zasobu (Ikona).
+        /// </summary>
+        public static System.Drawing.Icon snakeicon {
+            get {
+                object obj = ResourceManager.GetObject("snakeicon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         

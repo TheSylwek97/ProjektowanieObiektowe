@@ -32,6 +32,7 @@ namespace Snake
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSnake));
             this.PbCanvas = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblSocre = new System.Windows.Forms.Label();
@@ -111,6 +112,7 @@ namespace Snake
             this.Controls.Add(this.lblSocre);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PbCanvas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
