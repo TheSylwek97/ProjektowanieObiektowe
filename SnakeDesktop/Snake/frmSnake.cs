@@ -92,8 +92,8 @@ namespace Snake
             DialogResult result;
             string messageText = "Snake! ";
             string messageText2 = "Projekt wykonany przez:";
-            string messageText3 = "Sylwia Miœkiewicz";
-            string messageText4 = "Klaudia W³osek";
+            string messageText3 = "Sylwiê Miœkiewicz";
+            string messageText4 = "Klaudiê W³osek";
             string wintex = await TextMessage(messageText, messageText2, messageText3, messageText4);
 
             result = MessageBox.Show(wintex.ToString(CultureInfo.InvariantCulture), caption, buttons);
