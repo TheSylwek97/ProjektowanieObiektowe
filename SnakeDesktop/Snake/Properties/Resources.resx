@@ -124,4 +124,10 @@
   <data name="Image" xml:space="preserve">
     <value>Add resources</value>
   </data>
+  <data name="Icon" xml:space="preserve">
+    <value>Add resources</value>
+  </data>
+  <data name="snakeicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\snakeicon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

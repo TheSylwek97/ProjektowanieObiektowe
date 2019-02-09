@@ -356,6 +356,11 @@ namespace Snake
             pictureBox1.Image = new Bitmap(Properties.Resources.snakelogo);
         }
 
+        private void PbCanvas_Click(object sender, EventArgs e)
+        {
+
+        }
+
         /*private void Informacje_MouseClick(object sender, MouseEventArgs e)
         {
             MessageBox.Show("Snake");
