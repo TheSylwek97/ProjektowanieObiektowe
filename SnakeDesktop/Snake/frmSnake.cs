@@ -35,7 +35,7 @@ namespace Snake
         }
 
         ///<summary>
-        ///Okienko rozpoczynaj¹ce gre
+        ///Wywo³anie okna rozpoczynaj¹cego grê i ustawienie parametrow gry.
         ///</summary>
 
         private void StartGame()
@@ -60,30 +60,9 @@ namespace Snake
 
             
         }
-
-        /*private void BoxHellow()
-        {
-            string caption = "Snake";
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-            DialogResult result;
-            result = MessageBox.Show(messageText, caption, buttons);
-
-            if (result == System.Windows.Forms.DialogResult.OK)
-            {
-
-                // Closes the parent form.
-                Circle head = new Circle();
-                head.X = 0;
-                head.Y = 0;
-                Snake.Add(head);
-
-                //Zapisz wynik do wyœwietlania
-                lblSocre.Text = Settings.Score.ToString();
-
-                food = ClassLib.GenerateFood(PbCanvas.Size.Width, PbCanvas.Size.Height);
-
-            }
-        }*/
+        /// <summary>
+        /// 
+        /// </summary>
 
         private async void Box()
         {
