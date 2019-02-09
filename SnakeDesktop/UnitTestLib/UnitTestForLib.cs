@@ -1,48 +1,34 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ClassLibrary_Logic;
-using System.Collections.Generic;
-using System.Drawing;
-using Snake;
 
 namespace UnitTestLib
 {
     [TestClass]
-    public class UnitTestForLib 
+    public class UnitTestForLib
     {
-        [TestMethod]
-        public void TestMethodForSettings()
+        [DataTestMethod]
+        [DataRow(15, 15, 14, 0, 10, false)]
+        public void TestMethodForSettings(int w, int h, int s, int sc, int p, bool g)
         {
-            Console.WriteLine("Pokaż usawtenia domyślne:");
-            Console.WriteLine("Width " + Settings.Width);
-            Console.WriteLine("Height " + Settings.Height);
-            Console.WriteLine("Speed " + Settings.Speed);
-            Console.WriteLine("Score " + Settings.Score);
-            Console.WriteLine("Points " + Settings.Points);
-            Console.WriteLine("GameOver " + Settings.GameOver);
-            Console.WriteLine("direction " + Settings.Direction);
+            new Settings();
+            Assert.AreEqual(Settings.Width, w);
+            Assert.AreEqual(Settings.Height, h);
+            Assert.AreEqual(Settings.Speed, s);
+            Assert.AreEqual(Settings.Score, sc);
+            Assert.AreEqual(Settings.Points, p);
+            Assert.AreEqual(Settings.GameOver, g);
         }
 
-        [TestMethod]
-        public void TestMethodForDie()
+        [DataTestMethod]
+        [DataRow(false)]
+        public void TestMethodForNegationDie(bool a)
         {
-            if(Settings.GameOver == true)
-                Console.WriteLine("True - game is finished");
+
+            if (Settings.GameOver == true)
+                Assert.AreEqual(Settings.GameOver, !a);
             else
-                Console.WriteLine("False - game is still running");
-        }
-        
-        [TestMethod]
-        public void TestMethodForGenerateFood()
-        {
-          
-        }
-
-        [TestMethod]
-        public void TestMethodForEat()
-        {
+                Assert.AreEqual(Settings.GameOver, a);
 
         }
     }
 }
-

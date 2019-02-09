@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Snake</name>
+    </assembly>
+    <members>
+        <member name="T:Snake.FrmSnake">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Snake.FrmSnake.#ctor">
+            <summary>
+            Konstruktor nadający ustawione wartości podczas uruchomienia aplikacji
+            </summary>
+        </member>
+        <member name="M:Snake.FrmSnake.StartGame">
+            <summary>
+            Okienko rozpoczynające gre
+            </summary>
+        </member>
+        <member name="M:Snake.FrmSnake.UpdateScreen(System.Object,System.EventArgs)">
+            <summary>
+            Aktualizowanie okna
+            Sprawdź czy gra jest zakończona, jeśli tak daj możliwość ponownego jest włączenia.
+            Gdy gra jest uruchomiona ustal kierunek węża i dodaj metodę umożliwiającą  jego poruszanie.
+            <remarks>
+            Dodaj metodę odświeżania pictureBoxa do aktualizowania grafik
+            </remarks>
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Snake.FrmSnake.PbCanvas_Paint(System.Object,System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Rysując węża ustal różne kolory dla węża i pokarmu - opcjonalnie inne kolory dla głowy węża i jego ciała
+            Użyj pętli, aby każdy segment węża był wyświetlany.
+            Utal co ma się wyświtlać po przegraniu 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Snake.FrmSnake.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Snake.FrmSnake.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Snake.FrmSnake.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Snake.Program.Main">
+            <summary>
+            Mechanika i interface aplikacji są w pozostałych klasach
+            </summary>
+        </member>
+        <member name="T:Snake.Properties.Resources">
+            <summary>
+              Klasa zasobu wymagająca zdefiniowania typu do wyszukiwania zlokalizowanych ciągów itd.
+            </summary>
+        </member>
+        <member name="P:Snake.Properties.Resources.ResourceManager">
+            <summary>
+            Zwraca buforowane wystąpienie ResourceManager używane przez tę klasę.
+            </summary>
+        </member>
+        <member name="P:Snake.Properties.Resources.Culture">
+            <summary>
+              Przesłania właściwość CurrentUICulture bieżącego wątku dla wszystkich
+              przypadków przeszukiwania zasobów za pomocą tej klasy zasobów wymagającej zdefiniowania typu.
+            </summary>
+        </member>
+        <member name="P:Snake.Properties.Resources.Icon">
+            <summary>
+            Wyszukuje zlokalizowany ciąg podobny do ciągu Add resources.
+            </summary>
+        </member>
+        <member name="P:Snake.Properties.Resources.Image">
+            <summary>
+            Wyszukuje zlokalizowany ciąg podobny do ciągu Add resources.
+            </summary>
+        </member>
+        <member name="P:Snake.Properties.Resources.snakeicon">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Icon podobny do zasobu (Ikona).
+            </summary>
+        </member>
+        <member name="P:Snake.Properties.Resources.snakelogo">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+    </members>
+</doc>
