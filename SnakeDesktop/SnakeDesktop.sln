@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestLib", "UnitTestLib\
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup2", "Setup2\Setup2.vdproj", "{60608FA5-1312-4707-8654-2E1DDF46E877}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupEN", "SetupEN\SetupEN.vdproj", "{D7AEA1E6-12D6-4DC4-AB6B-CA55D4E30269}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,12 @@ Global
 		{60608FA5-1312-4707-8654-2E1DDF46E877}.Release|Any CPU.ActiveCfg = Release
 		{60608FA5-1312-4707-8654-2E1DDF46E877}.Release|x64.ActiveCfg = Release
 		{60608FA5-1312-4707-8654-2E1DDF46E877}.Release|x86.ActiveCfg = Release
+		{D7AEA1E6-12D6-4DC4-AB6B-CA55D4E30269}.Debug|Any CPU.ActiveCfg = Debug
+		{D7AEA1E6-12D6-4DC4-AB6B-CA55D4E30269}.Debug|x64.ActiveCfg = Debug
+		{D7AEA1E6-12D6-4DC4-AB6B-CA55D4E30269}.Debug|x86.ActiveCfg = Debug
+		{D7AEA1E6-12D6-4DC4-AB6B-CA55D4E30269}.Release|Any CPU.ActiveCfg = Release
+		{D7AEA1E6-12D6-4DC4-AB6B-CA55D4E30269}.Release|x64.ActiveCfg = Release
+		{D7AEA1E6-12D6-4DC4-AB6B-CA55D4E30269}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
